@@ -1,0 +1,6 @@
+:host > mat-card{
+  width: fit-content;
+}
+button{
+  margin: 5px;
+}
