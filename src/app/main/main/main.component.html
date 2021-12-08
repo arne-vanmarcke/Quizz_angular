@@ -5,23 +5,23 @@
   </mat-card-title-group>
   <mat-form-field appearance="fill">
     <mat-label>Category</mat-label>
-    <mat-select (selectionChange)="changeCategorySelection($event)">
+    <mat-select [(value)]="selectorCategory" (selectionChange)="changeCategorySelection($event)">
       <mat-option *ngFor="let category of categories" [value]="category.value">{{category.category}}</mat-option>
     </mat-select>
   </mat-form-field>
   <mat-form-field appearance="fill">
     <mat-label>Difficulty</mat-label>
-    <mat-select (selectionChange)="changeDifficultySelection($event)">
+    <mat-select [(value)]="selectorDifficulty" (selectionChange)="changeDifficultySelection($event)">
       <mat-option *ngFor="let difficulty of difficulties" [value]="difficulty.difficulty">{{difficulty.difficulty}}</mat-option>
     </mat-select>
   </mat-form-field>
   <mat-form-field appearance="fill">
     <mat-label>Type</mat-label>
-    <mat-select (selectionChange)="changeTypeSelection($event)">
+    <mat-select [(value)]="selectorType" (selectionChange)="changeTypeSelection($event)">
       <mat-option *ngFor="let type of types" [value]="type.value">{{type.type}}</mat-option>
     </mat-select>
   </mat-form-field>
   <mat-card-actions id="btnDiv">
-    <button mat-flat-button color="primary" [routerLink]="['question']">Start</button>
+    <button mat-flat-button color="primary" [routerLink]="['question']" (click)="onclick($event)">Start</button>
   </mat-card-actions>
 </mat-card>
