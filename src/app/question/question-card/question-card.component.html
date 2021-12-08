@@ -4,8 +4,9 @@
   </mat-card-title-group>
   <mat-card-content>
     <label>{{question.question}}</label>
+    <label>{{selType}}</label>
   </mat-card-content>
   <mat-card-actions>
-    <button *ngFor="let question of question.choises" (click)="checkQuestion(question)" mat-flat-button color="primary">{{question}}</button>
+    <button *ngFor="let question of question.choises" [ngClass]="{'green' : toggle[question.id]==1, 'red': toggle[question.id]==2}" (click)="checkQuestion(question)" mat-flat-button color="primary">{{question.value}}</button>
   </mat-card-actions>
 </mat-card>
