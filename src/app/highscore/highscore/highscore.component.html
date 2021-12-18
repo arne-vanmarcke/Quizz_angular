@@ -1,1 +1,3 @@
-<button mat-flat-button color="primary" (click)="postScore($event)">Post</button>
+<div *ngIf="highscores">
+  <app-highscore-table [highscores]="highscores "></app-highscore-table>
+</div>

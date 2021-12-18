@@ -1,4 +1,4 @@
 export interface Highscore{
-  id:number,
+  id?:string,
   score:number,
 }

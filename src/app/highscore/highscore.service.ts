@@ -9,10 +9,12 @@ import { Highscore } from './highscore';
 })
 export class HighscoreService {
 
+  port:number=7185
+
   constructor(private http: HttpClient) { }
 
   getHighscores(): Observable<Highscore[]>{
-    return this.http.get<Highscore[]>("https://localhost:7055/api/Highscores")
+    return this.http.get<Highscore[]>("https://localhost:"+this.port+"/api/Highscore")
   }
 
   newHeaders={
@@ -23,6 +25,6 @@ export class HighscoreService {
 
   postHighscore(highscore:Highscore):Observable<Highscore>{
     console.log(highscore)
-    return this.http.post<Highscore>("https://localhost:7055/api/Highscores",{'id':highscore.id,'score':highscore.score},this.newHeaders)
+    return this.http.post<Highscore>("https://localhost:"+this.port+"/api/Highscore",{'id':highscore.id,'score':highscore.score},this.newHeaders)
   }
 }
