@@ -2,7 +2,8 @@
 export interface Question{
   question:string,
   answer:string,
-  choises:QuestionButton[]
+  choises:QuestionButton[],
+  difficulty:string,
 }
 
 export interface QuestionButton{
@@ -22,4 +23,11 @@ export interface QuestionReceived{
   incorrect_answers: string[],
   question: string,
   type: string,
+}
+
+export interface HtmlParsed{
+  sourcespan?:any,
+  i18n?:any,
+  value:string,
+  tokens:any[],
 }
