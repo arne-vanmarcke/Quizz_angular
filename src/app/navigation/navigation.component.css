@@ -1,0 +1,17 @@
+:host > mat-toolbar > a{
+  color: white;
+  margin: 0 5px 0 5px;
+  text-decoration: none;
+}
+:host > mat-toolbar > a:hover{
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+#title{
+  font-weight: bold;
+  margin-right: 50px;
+}
+#title:hover{
+  text-decoration: none;
+}
