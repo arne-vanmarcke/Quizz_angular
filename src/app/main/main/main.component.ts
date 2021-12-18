@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, OnInit, } from '@angular/core';
 import { Category, Difficulty, Type } from '../interfaces';
 import { QuestionService } from '../../question/question.service';
 import { MainService } from '../main.service';
@@ -9,13 +9,14 @@ import { MainService } from '../main.service';
   styleUrls: ['./main.component.css']
 })
 export class MainComponent implements OnInit {
-  @Output() outTypes = new EventEmitter<any[]>();
+
   categories!:Category[]
   difficulties!:Difficulty[]
   types!:Type[]
   selectorCategory:any=""
   selectorDifficulty:any=""
   selectorType:any=""
+
   constructor(private questionService: QuestionService, private mainService: MainService) {
     this.mainService.getTypes().subscribe((types:Type[])=>this.types=types)
     this.mainService.getDifficulty().subscribe((difficulties:Difficulty[])=>this.difficulties=difficulties)
@@ -36,15 +37,14 @@ export class MainComponent implements OnInit {
   }
   ngOnInit(): void {
     this.selectorCategory=this.categories[0].value
-    this.selectorDifficulty=this.difficulties[0].difficulty
+    this.selectorDifficulty=this.difficulties[0].text
     this.selectorType=this.types[0].value
 
-    this.questionService.changeCategory(this.selectorCategory)
+    this.questionService.changeCategory(this.selectorCategory.toString())
     this.questionService.changeDifficulty(this.selectorDifficulty)
     this.questionService.changeType(this.selectorType)
-  }
-  onclick(event:MouseEvent){
-    //this.outTypes.emit([this.selCategory, this.selDifficulty, this.selType])
+
+    this.questionService.resetScore()
   }
 
 }

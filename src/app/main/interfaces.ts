@@ -1,11 +1,12 @@
 export interface Type{
-  type:string,
+  text:string,
   value?:string,
 }
 export interface Category{
-  category:string,
+  text:string,
   value:number
 }
 export interface Difficulty{
-  difficulty:string
+  text:string,
+  value:string
 }

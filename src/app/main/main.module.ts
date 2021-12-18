@@ -6,10 +6,11 @@ import { MatFormFieldModule } from '@angular/material/form-field'
 import { MatSelectModule } from '@angular/material/select'
 import { MainRoutingModule } from './main-routing.module';
 import { MainComponent } from './main/main.component';
+import { FormSelectComponent } from './form-select/form-select.component';
 
 
 @NgModule({
-  declarations: [MainComponent],
+  declarations: [MainComponent, FormSelectComponent],
   imports: [
     MatCardModule,
     MatButtonModule,

@@ -12,15 +12,15 @@ export class MainService {
   getTypes():Observable<Type[]>{
     return of([
       {
-        type:"Any Type",
-        value:""
+        text:"Any Type",
+        value:"any"
       },
       {
-        type:"Multiple choise",
+        text:"Multiple choise",
         value:"multiple"
       },
       {
-        type:"True / False",
+        text:"True / False",
         value:"boolean"
       }
     ])
@@ -28,119 +28,123 @@ export class MainService {
   getDifficulty():Observable<Difficulty[]>{
     return of([
       {
-        difficulty:"Any Difficulty"
+        text:"Any Difficulty",
+        value:"Any Difficulty",
       },
       {
-        difficulty:"Easy"
+        text:"Easy",
+        value:"Easy",
       },
       {
-        difficulty:"Medium"
+        text:"Medium",
+        value:"Medium"
       },
       {
-        difficulty:"Hard"
+        text:"Hard",
+        value:"Hard",
       }
     ])
   }
   getCategory():Observable<Category[]>{
     return of([
       {
-        category:"Any Category",
+        text:"Any Category",
         value:1
       },
       {
-        category: "general knowledge",
+        text: "general knowledge",
         value:9
       },
       {
-        category: "Entertainment: Books",
+        text: "Entertainment: Books",
         value:10
       },
       {
-        category: "Entertainment: Film",
+        text: "Entertainment: Film",
         value:11
       },
       {
-        category: "Entertainment: Music",
+        text: "Entertainment: Music",
         value:12
       },
       {
-        category: "Entertainment: Musicals & Theatres",
+        text: "Entertainment: Musicals & Theatres",
         value:13
       },
       {
-        category: "Entertainment: Television",
+        text: "Entertainment: Television",
         value:14
       },
       {
-        category: "Entertainment: Video Games",
+        text: "Entertainment: Video Games",
         value:15
       },
       {
-        category: "Entertainment: Board Games",
+        text: "Entertainment: Board Games",
         value:16
       },
       {
-        category: "Science & Nature",
+        text: "Science & Nature",
         value:17
       },
       {
-        category: "Science: Computers",
+        text: "Science: Computers",
         value:18
       },
       {
-        category: "Science: Mathematics",
+        text: "Science: Mathematics",
         value:19
       },
       {
-        category: "Mythology",
+        text: "Mythology",
         value:20
       },
       {
-        category: "Sports",
+        text: "Sports",
         value:21
       },
       {
-        category: "Geography",
+        text: "Geography",
         value:22
       },
       {
-        category: "History",
+        text: "History",
         value:23
       },
       {
-        category: "Politics",
+        text: "Politics",
         value:24
       },
       {
-        category: "Art",
+        text: "Art",
         value:25
       },
       {
-        category: "Celebrities",
+        text: "Celebrities",
         value:26
       },
       {
-        category: "Animals",
+        text: "Animals",
         value:27
       },
       {
-        category: "Vehicles",
+        text: "Vehicles",
         value:28
       },
       {
-        category: "Entertainment: Comics",
+        text: "Entertainment: Comics",
         value:29
       },
       {
-        category: "Science: Gadgets",
+        text: "Science: Gadgets",
         value:30
       },
       {
-        category: "Entertainment: Japanese Anime & Manga",
+        text: "Entertainment: Japanese Anime & Manga",
         value:31
       },
       {
-        category: "Entertainment: Cartoon & Animations",
+        text: "Entertainment: Cartoon & Animations",
         value:32
       },
     ])

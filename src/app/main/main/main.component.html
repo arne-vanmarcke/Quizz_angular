@@ -1,27 +1,11 @@
 <mat-card tabindex="0" class="card">
   <mat-card-title-group>
-    <mat-card-title>Setup </mat-card-title>
-    <mat-card-title>Your previous highscore was 8!</mat-card-title>
+    <mat-card-title>Select your type of questions!</mat-card-title>
   </mat-card-title-group>
-  <mat-form-field appearance="fill">
-    <mat-label>Category</mat-label>
-    <mat-select [(value)]="selectorCategory" (selectionChange)="changeCategorySelection($event)">
-      <mat-option *ngFor="let category of categories" [value]="category.value">{{category.category}}</mat-option>
-    </mat-select>
-  </mat-form-field>
-  <mat-form-field appearance="fill">
-    <mat-label>Difficulty</mat-label>
-    <mat-select [(value)]="selectorDifficulty" (selectionChange)="changeDifficultySelection($event)">
-      <mat-option *ngFor="let difficulty of difficulties" [value]="difficulty.difficulty">{{difficulty.difficulty}}</mat-option>
-    </mat-select>
-  </mat-form-field>
-  <mat-form-field appearance="fill">
-    <mat-label>Type</mat-label>
-    <mat-select [(value)]="selectorType" (selectionChange)="changeTypeSelection($event)">
-      <mat-option *ngFor="let type of types" [value]="type.value">{{type.type}}</mat-option>
-    </mat-select>
-  </mat-form-field>
+  <app-form-select [items]="categories" [defaultSelected]="categories[0].value" [label]="'Category'" (OutputEvent)="changeCategorySelection($event)"></app-form-select>
+  <app-form-select [items]="difficulties" [label]="'Difficulty'" [defaultSelected]="difficulties[0].text" (OutputEvent)="changeDifficultySelection($event)"></app-form-select>
+  <app-form-select [items]="types"  [label]="'Type'" [defaultSelected]="types[0].value" (OutputEvent)="changeTypeSelection($event)"></app-form-select>
   <mat-card-actions id="btnDiv">
-    <button mat-flat-button color="primary" [routerLink]="['question']" (click)="onclick($event)">Start</button>
+    <button mat-flat-button color="primary" [routerLink]="['question']">Start</button>
   </mat-card-actions>
 </mat-card>
