@@ -28,7 +28,6 @@ export class QuestionCardComponent implements OnInit, OnDestroy {
 
   constructor(private questionService:QuestionService, private router: Router, private route: ActivatedRoute) {
     this.questionService.getQuestion().subscribe(question=>{
-      console.log(question.results)
       this.createQuestion(question)
     })
   }
@@ -41,7 +40,6 @@ export class QuestionCardComponent implements OnInit, OnDestroy {
         else
           this.toggle[i]=0
       }
-      console.log('right')
       this.question_correct=true
       let points=1
       if(this.question.difficulty==="hard")
@@ -64,7 +62,6 @@ export class QuestionCardComponent implements OnInit, OnDestroy {
         else
           this.toggle[i]=0
       }
-      console.log('wrong')
       this.question_correct=false
       setTimeout(()=>{
         this.router.navigate(['']);
@@ -74,7 +71,6 @@ export class QuestionCardComponent implements OnInit, OnDestroy {
 
   createQuestion(question:Http_Response){
     var QuestionInf: QuestionReceived=question.results[0]
-    console.log("inf: ",QuestionInf)
     if(QuestionInf==undefined){
       this.question_not_exist=true
       this.router.navigate(['']);
@@ -92,10 +88,8 @@ export class QuestionCardComponent implements OnInit, OnDestroy {
   }
   parsed!:HtmlParsed
   decodeHTMLEntities(str:string){
-    //console.log("before: ",str)
     let parser= new DOMParser();
     let parsed=parser.parseFromString(str,'text/html')
-    //console.log("after",parsed.body.innerHTML)
     return parsed.body.innerHTML
   }
 

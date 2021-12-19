@@ -24,15 +24,12 @@ export class MainComponent implements OnInit {
   }
 
   changeCategorySelection(event:any){
-    console.log(event.value)
     this.questionService.changeCategory(event.value)
   }
   changeDifficultySelection(event:any){
-    console.log(event.value)
     this.questionService.changeDifficulty(event.value)
   }
   changeTypeSelection(event:any){
-    console.log(event.value)
     this.questionService.changeType(event.value)
   }
   ngOnInit(): void {
