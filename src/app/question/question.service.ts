@@ -13,10 +13,14 @@ export class QuestionService {
 
   private hs:Highscore={
     score:2,
+    name:"",
   }
 
   private score = new BehaviorSubject<number>(0)
   currentScore= this.score.asObservable()
+
+  private name = new BehaviorSubject<string>("unknown")
+  currentName= this.score.asObservable()
 
   private TypeSource = new BehaviorSubject<string>("default")
   currentType = this.TypeSource.asObservable()
@@ -28,7 +32,9 @@ export class QuestionService {
   currentCategory = this.CategorySource.asObservable()
 
   constructor(private http: HttpClient, private highscoreService:HighscoreService) {}
-
+  changeName(name:string){
+    this.name.next(name)
+  }
   changeType(type:string){
     this.TypeSource.next(type)
   }
@@ -46,6 +52,11 @@ export class QuestionService {
   }
   wrongAnswer(){
     this.hs.score=this.score.getValue()
+    let _name=this.name.getValue()
+    if(_name=="")
+      this.hs.name="Unknown"
+    else
+      this.hs.name=_name
     this.highscoreService.postHighscore(this.hs).subscribe(result=>{})
   }
   getQuestion(): Observable<Http_Response>{

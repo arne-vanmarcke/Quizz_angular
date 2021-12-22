@@ -32,6 +32,9 @@ export class MainComponent implements OnInit {
   changeTypeSelection(event:any){
     this.questionService.changeType(event.value)
   }
+  setName(event:any){
+    this.questionService.changeName(event.value)
+  }
   ngOnInit(): void {
     this.selectorCategory=this.categories[0].value
     this.selectorDifficulty=this.difficulties[0].text
@@ -43,5 +46,6 @@ export class MainComponent implements OnInit {
 
     this.questionService.resetScore()
   }
+
 
 }

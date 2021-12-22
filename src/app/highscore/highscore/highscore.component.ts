@@ -14,6 +14,7 @@ export class HighscoreComponent implements OnInit {
   Received!:boolean;
   hs:Highscore={
     score:0,
+    name:""
   };
   sortHighscores!:any;
 

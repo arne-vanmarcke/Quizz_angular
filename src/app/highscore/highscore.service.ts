@@ -24,6 +24,6 @@ export class HighscoreService {
   }
 
   postHighscore(highscore:Highscore):Observable<Highscore>{
-    return this.http.post<Highscore>("https://localhost:"+this.port+"/api/Highscore",{'id':highscore.id,'score':highscore.score},this.newHeaders)
+    return this.http.post<Highscore>("https://localhost:"+this.port+"/api/Highscore",{'id':highscore.id,'score':highscore.score,'name':highscore.name},this.newHeaders)
   }
 }

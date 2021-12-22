@@ -7,6 +7,7 @@ import { MatSelectModule } from '@angular/material/select'
 import { MainRoutingModule } from './main-routing.module';
 import { MainComponent } from './main/main.component';
 import { FormSelectComponent } from './form-select/form-select.component';
+import { MatInputModule } from '@angular/material/input'
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { FormSelectComponent } from './form-select/form-select.component';
     MatSelectModule,
     MatFormFieldModule,
     CommonModule,
+    MatInputModule,
     MainRoutingModule
   ],
   exports:[MainComponent]

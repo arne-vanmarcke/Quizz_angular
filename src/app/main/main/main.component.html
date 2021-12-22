@@ -1,4 +1,8 @@
 <mat-card tabindex="0" class="card">
+  <mat-form-field appearance="fill">
+    <mat-label>Insert your name</mat-label>
+    <input #nameBar matInput name='nameBar' placeholder="My name...">
+  </mat-form-field>
   <mat-card-title-group>
     <mat-card-title>Select your type of questions!</mat-card-title>
   </mat-card-title-group>
@@ -6,6 +10,6 @@
   <app-form-select [items]="difficulties" [label]="'Difficulty'" [defaultSelected]="difficulties[0].text" (OutputEvent)="changeDifficultySelection($event)"></app-form-select>
   <app-form-select [items]="types"  [label]="'Type'" [defaultSelected]="types[0].value" (OutputEvent)="changeTypeSelection($event)"></app-form-select>
   <mat-card-actions id="btnDiv">
-    <button mat-flat-button color="primary" [routerLink]="['question']">Start</button>
+    <button mat-flat-button color="primary" [routerLink]="['question']" (click)='setName(nameBar)'>Start</button>
   </mat-card-actions>
 </mat-card>
